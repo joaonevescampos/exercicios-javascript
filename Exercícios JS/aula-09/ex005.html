@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testando o DOM</title>
+</head>
+<body>
+    <main>
+        <h1 id="titulo-1">Testando o DOM</h1>
+        <p id="paragrafo-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam rem deleniti fuga quia, <strong>vero quod cupiditate</strong> assumenda neque. Qui, enim. Suscipit harum aspernatur magni cum! Provident quas blanditiis voluptate numquam?</p>
+        <p id="paragrafo-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias aliquid libero, enim ducimus, cum eum consequatur aut quam adipisci fugit explicabo facilis quibusdam molestiae commodi amet. Officia sequi in ratione?</p>
+    </main>
+    <script>
+        p1 = window.document.getElementById('paragrafo-1')
+        window.document.write(p1.innerHTML)
+        window.document.body.style.background = 'black'
+        window.document.body.style.color = '#fff'
+        window.document.body.style.margin = '30px'
+        window.document.body.style.padding = '20px'
+    </script>
+</body>
+</html>
