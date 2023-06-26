@@ -20,7 +20,7 @@
     </style>
 </head>
 <body>
-    <div id="box" onclick="clicou()" onmouseenter="entrou()" onmouseout = 'saiu()' onmouseup="cima()" onmousedown = 'baixo()'>
+    <div id="box">
         <p id="frase">Interaja...</p>
     </div>
 
@@ -29,6 +29,10 @@
     </div>
     <script>
         var a = document.getElementById('frase')
+
+        a.addEventListener('mouseenter', entrou)
+        a.addEventListener('mouseout', saiu)
+        a.addEventListener('click', clicou)
 
         function entrou(){
             a.innerHTML = 'Bem-vindo!' 

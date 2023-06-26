@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora - soma</title>
+    <style>
+        input{
+            width: 100px;
+        }
+
+        button{
+            margin-top: 20px;
+            margin-left: 80px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <input type="number" name="n1" id="n1"> + 
+    <input type="number" name="n2" id="n2"> = 
+    <span id="r"><strong>Resultado</strong></span>
+    <div><button id="botao-somar">Somar</button></div>
+
+    <script>
+        var botao = document.querySelector('#botao-somar')
+        botao.addEventListener('click', somar)
+        function somar(){
+        a1 = document.getElementById('n1')
+        a2 = document.getElementById('n2')
+        n1 = Number(a1.value)
+        n2 = Number(a2.value)
+        s = n1 + n2
+        r = document.getElementById('r')
+        r.innerHTML = `<strong>${s}</strong>`}
+    </script>
+
+</body>
+</html>
