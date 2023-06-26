@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Multas</title>
+</head>
+<body>
+    <h1>Sistema de Multas</h1>
+    <p>Sua velocidade: </p>
+    <input type="number" name="velocidade" id="velocidade">
+    <input type="submit" value="Verificar" id="verificar" onclick="detectar_multa()">
+    <div id="resultado"></div>
+
+    <script>
+        function detectar_multa(){
+        var vel = document.querySelector('#velocidade')
+        vel = Number(vel.value)
+        var res = document.getElementById('resultado')
+
+        if(vel > 60){
+            res.innerHTML = '<p>Você foi <strong>multado</strong>!</p>'
+        }
+
+        else{
+            res.innerHTML = '<p><strong>Sem multas!</strong> Continue dirigindo com segurança!</p>'
+        }
+    }
+    </script>
+
+
+    
+</body>
+</html>
