@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relógio</title>
+    <style>
+        body{
+            height: 100vh;
+            position: relative;
+            background-color: rgb(255, 255, 112);
+        }
+
+
+        #container{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            background-color: white;
+            width: 500px;
+            height: 500px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.356);
+            background-color: rgb(14, 0, 48);
+
+            transform: translate(-50%, -50%);
+        }
+
+
+    </style>
+</head>
+<body>
+        <div id="container">
+            <h1>Relógio</h1>
+            <div id="horas"></div>
+            <div id="imagem">
+
+                
+            </div>
+        </div>
+   
+    <script>
+        
+        var horaAtual = new Date().getHours()
+        var hora = document.getElementById('horas')
+         hora.innerHTML = `<p id = 'horario'>Agora são <strong>${horaAtual}h</strong></p>`
+         imagem = document.getElementById('imagem')
+
+         if(horaAtual < 12){
+            imagem.innerHTML += '<img src="imagens/dia.jpg" alt="dia" id = "dia">'
+            dia.style.width = '400px'
+            document.body.style.background = 'rgb(198, 245, 245)'
+            container.style.background = 'white'
+         }
+
+         else if(horaAtual < 18){
+            imagem.innerHTML += '<img src="imagens/tarde.jpg" alt="tarde" id = "tarde">'
+            tarde.style.width = '400px'
+            document.body.style.background = 'rgb(230, 202, 111)'
+            container.style.background = 'white'
+         }
+
+         else{
+            imagem.innerHTML += '<img src="imagens/noite.jpg" alt="noite" id = "noite">'
+            noite.style.width = '400px'
+            document.body.style.background = 'rgb(14, 0, 48)'
+            container.style.background = 'white'
+
+         }
+        
+
+
+
+    </script>
+
+    
+    
+</body>
+</html>
