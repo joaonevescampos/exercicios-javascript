@@ -3,52 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Verificador de idade</title>
     <style>
         body{
             position: relative;
             height: 100vh;
             font-family: Arial, Helvetica, sans-serif;
             font-size: 10pt;
+            background-color: rgb(31, 45, 105);
 
         }
         .container{
+            background-color: white;
             position: absolute;
-            top: 30%;
+            top: 50%;
             left: 50%;
             border: solid 1px black;
             border-radius: 10px;
             box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.397);
             padding: 30px;
+            height: 400px;
+
         
             transform: translate(-50%, -50%);
 
         }
 
+      
+
         .container-nascimento, .container-sexo{
             margin-bottom: 20px;
+        }
+
+        h1{
+            text-transform: uppercase;
+            font-size: 14pt;
+            color: rgb(31, 45, 105);
+        }
+
+        #foto{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        img{
+            width: 150px;
+            border-radius: 50%;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Verificador de idade</h1>
-        <div class="container-nascimento">
-            <label for="ano">Ano de nascimento</label>
-            <input type="number" id="nascimento">
+   
+        <div class="container">
+            <h1>Verificador de idade</h1>
+            <div class="container-nascimento">
+                <p><label for="ano">Ano de nascimento</label></p>
+                <input type="number" id="nascimento">
+            </div>
+            <div class="container-sexo">
+                <input type="radio" name="sexo" value="M" id="mas" onclick="detectarM()">
+                <label for="mas">Masculino</label>
+                <input type="radio" name="sexo" value="F" id="fem" onclick="detectarF()">
+                <label for="fem">Feminino</label><br>
+                <p><input type="submit" value="Verificar idade"  onclick="calcular()"></p>
+            </div>
+            <div id="res"></div>
+            <div id="foto"></div>
+        
         </div>
-
-        <div class="container-sexo">
-            <input type="radio" name="sexo" value="M" id="mas">
-            <label for="mas">Masculino</label>
-            <input type="radio" name="sexo" value="F" id="sexo">
-            <label for="mas">Feminino</label><br>
-            <input type="submit" value="Verificar idade" onclick="calcular()">
-        </div>
-        <div id="res"></div>
-    </div>
 
     <script>
+        function detectarM(){
+            sexo = 'masculino'
+        }
+
+        function detectarF(){
+            sexo = 'feminino'
+        }
         function calcular(){
         ano = document.getElementById('nascimento')
         ano = Number(ano.value)
@@ -56,11 +88,63 @@
         
 
         anoAtual = new Date().getFullYear()
-        idade = anoAtual - ano
-        r.innerHTML = `Você tem ${idade} anos de idade!`
+        var idade = anoAtual - ano
 
-
+        if(idade < 0){
+            r.innerHTML = 'ERRO! Digite um ano válido!'
+            foto.innerHTML = ''
         }
+        else{
+            r.innerHTML = `<p>Você tem ${idade} anos de idade!</p>`
+
+            if(sexo == 'masculino'){
+                if (idade > 70){
+                foto.innerHTML = '<img src="imagens/idoso.jpg" alt="idoso" id="imagem">'
+            }
+                else if(idade > 50){
+                    foto.innerHTML = '<img src="imagens/homem-50.jpg" alt="adulto" id="imagem">'
+                }
+                else if(idade > 20) {
+                    foto.innerHTML = '<img src="imagens/homem-20.jpg" alt="jovem" id="imagem">'
+                }
+                else if(idade > 3){
+                    foto.innerHTML = '<img src="imagens/homem-10.jpg" alt="criança" id="imagem">'
+                }
+                else if(idade > 0){
+                    foto.innerHTML = '<img src="imagens/homem-3.jpg" alt="bebê" id="imagem">'
+                }
+                else if(idade == 0){
+                    foto.innerHTML = '<img src="imagens/recem-nascido.jpg" alt="recem-nascido" id="imagem">'
+                }
+                }
+            }
+
+                if(sexo == 'feminino'){
+                if (idade > 70){
+                foto.innerHTML = '<img src="imagens/idosa.jpg" alt="idosa" id="imagem">'
+            }
+                else if(idade > 50){
+                    foto.innerHTML = '<img src="imagens/mulher-50.jpg" alt="adulta" id="imagem">'
+                }
+                else if(idade > 20) {
+                    foto.innerHTML = '<img src="imagens/mulher-20.jpg" alt="jovem" id="imagem">'
+                }
+                else if(idade > 3){
+                    foto.innerHTML = '<img src="imagens/mulher-10.jpg" alt="criança" id="imagem">'
+                }
+                else if(idade > 0){
+                    foto.innerHTML = '<img src="imagens/mulher-3.jpg" alt="bebê" id="imagem">'
+                }
+                else if(idade == 0){
+                    foto.innerHTML = '<img src="imagens/recem-nascido.jpg" alt="recem-nascido" id="imagem">'
+                }
+                }
+            }
+
+
+        
+
+        
 
     </script>
 </body>
