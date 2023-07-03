@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+body{
+    background-color: rgb(105, 105, 192);
+}
+
+main{
+    background-color: white;
+    width: 400px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.411);
+}
+
+h1{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+section{
+    margin: auto;
+    text-align: center;
+    width: 300px;
+}
+
+#num{
+    display: block;
+    text-align: center;
+    margin: auto;
+}
+
+#add{
+    display: block;
+    text-align: center;
+    margin: auto;
+}
+.shower{
+    display: block;
+}
+#finalizar{
+    display: block;
+    text-align: center;
+    margin: auto;
+}

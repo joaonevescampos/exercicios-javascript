@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de números</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Analisador de números</h1>
+    <main>
+        <section>
+            <div class="dados">
+                <label for="num">Digite um número (1 a 100):</label>
+                <p><input type="number" name="num" id="num"></p>
+                <input type="button" value="Adicionar" name="add" id="add" onclick="adicionarNum()">
+            
+            </div>
+            <div class="show">
+                <p><select name="shower" id="shower" size="10"></select></p>
+                <input type="submit" value="Finalizar" name="finalizar" id="finalizar" onclick="calcularNum()">
+            </div>
+            <div id="resposta"></div>
+        </section>
+
+        <!-- quantidade de numeros cadastrados;
+        Maior número;
+        Menor número;
+        Soma;
+        Média; -->
+
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
